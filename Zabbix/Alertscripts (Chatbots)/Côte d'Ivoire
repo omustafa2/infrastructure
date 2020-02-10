@@ -1,0 +1,18 @@
+#!/bin/bash
+
+export http_proxy="http://10.18.35.253:8080";export https_proxy="http://10.18.35.253:8080"
+body=$1
+
+echo "{
+  "\"recipient\"": {
+   "\"thread_key\"": "\"t_2783073768404909\""
+  },
+  "\"message\"":{
+         "\"text\"":"\"$body\""
+  }
+}" > /usr/lib/zabbix/alertscripts/file.json
+
+#curl -x http://10.18.35.253:8080 -X POST -H "Content-Type:application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJ2aDh1aHdRRnBTNVZA5dWhuRTFwVzhfbU1wNEYxbjBFWTR0bzE4RDNQQVhlNWtCZAzdIQmk2bUZAUX2tGVmh0OGk4akpya2gxbWRKYXFwNE5FTndIbU84NVZAVUVZAycDRQQmpWSzRmTUFlSTllajYxS094MUZATYjVQSEw3aExJajAxS0M5dnFIcWFXb1dEbi1FSW10QzlSOEhuSmJIY2JpeG1DaTBfOFVKNlhsTUh0bmMtSlNteTRsR1lxMzdDcjU5aFBxWUVQMUQwcFVaX25uagZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
+#curl -x http://10.18.35.253:8080 -X POST -H "Content-Type:application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJzN0IxNFhhSloya0VvVWpnQ3Q1VC1TWWZAJbGwxcVp6SDNhNGIydWxfR3NQSXdhQlFuQjF0VUdSZAzlYR3VVVHZA0R2pIZAGhMUHdBaFBqekxqVlV5Wl9WR1A0OHVwbTBLU1p4dWZArY2R1SW9ldHkwV0VIeVZALQlF5NUV3ODdKWjdFVVRfcEFXTGVTNWJKU1VITVVFdGM1a2xsdVhpSV9uTlBycEliTGotaWw3czB2SjhQT2FTa1NkVG8tUDBQMnptSlFxT21CZA3I2cWZAIbUFqUQZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
+#curl -x http://10.18.35.253:8080 -X POST -H "Content-Type: application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJ0TDJ1bG1MSlJkSGpsVHFERklucDJOWW1JRkpLUWttM1pBM2lhc2JpWkxhXzB5YUJYNS1qYTNNekc1YW1zRmVELUFYNThqUzF3Slg5em9KYzVLWWNidWxVNjI2aWxfeFBBcEJMb0gzWE80N2trazUzak13N3I5ZADdrYkdSU0xhZAWlMR0xvTWZAXOERMbGtwT1BKckh3UThQanQ5aExEeHBSQ2hXZA3BOVFVjTmowTmRxSXFGTkRZAa3BuUUI0MVBYWm80ODVITkdVUDVVNk5aSAZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
+curl -x http://10.18.35.253:8080 -X POST -H "Content-Type: application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJ2TFo2QzlBTjNRUzA2eTVzNnpWLThMc0JFcjVWd05VNHlnT1RCbmwzOGI3TzZAjdTFZAeWdJakhmRzdzQ19CZAU5yRmIyR0VMNTlLVWtfNHRJRkRmejBpamQtNWdTSnRrbFpCVWhmX1RCbWZADZAWRnUFpRcnZA6YkZAmWFhoNVB3ZA1pUQjlObmlUeTk4S21lbWRKN0hGS084STBFWVdtNzFzZAHhuWDhtSjItWk9zM2ZAiaUJvR2hKR1dUYjNlVnZAvc3puSTFSbV9mTDR5YU1XSFVPagZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
