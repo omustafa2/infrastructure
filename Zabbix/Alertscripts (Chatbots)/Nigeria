@@ -1,0 +1,14 @@
+#!/bin/bash
+#export http_proxy="http://10.1.224.244:8080";export https_proxy="http://10.1.224.244:8080"
+body=$1
+
+echo "{
+  "\"recipient\"": {
+   "\"thread_key\"": "\"t_2179930735444170\""
+  },
+  "\"message\"":{
+         "\"text\"":"\"$body\""
+  }
+}" > /usr/lib/zabbix/alertscripts/file.json
+
+curl -x http://10.1.224.244:8080 -X POST -H "Content-Type: application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJzbGxTVkw3TGdRNGFjUEVJQ05HbTZAFNU1XVDloOXB1ektVRmRkcFRfMkNleDZAlaE9hS1dxYW1PTXFMNHFKMi0tVFNzOEdRdnBzbGcxSkU5bmJVTHlXLU1lb2dLSUdNdy1PLThGMy0xX3JUVi00ZATViU0swLWo0SjJXcEpYNGNjWTNiZAlJlcGxzaU9TSXJzNVdJN2g2R2MyTHJkbFdic0hDVFhFUGVDV3JtejVKV2pRUkpvbm1zNzZAuekdocmZAHR2FQMU1URkxSRFJhUmdDMgZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
