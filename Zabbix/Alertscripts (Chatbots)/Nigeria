@@ -1,0 +1,18 @@
+#!/bin/bash
+#export http_proxy="http://10.1.224.244:8080";export https_proxy="http://10.1.224.244:8080"
+#export http_proxy=http://MONEM_AL:enzoslR261989@nlawsprvq01.mtn.co.za:8080;export https_proxy=http://MONEM_AL:enzoslR261989@nlawsprvq01.mtn.co.za:8080
+export http_proxy=http://nabeel_t:'enzoslR722$'@nlawsprvq01.mtn.co.za:8080;export https_proxy=http://nabeel_t:'enzoslR722$'@nlawsprvq01.mtn.co.za:8080
+body=$1
+
+echo "{
+  "\"recipient\"": {
+   "\"thread_key\"": "\"t_2552206671539236\""
+  },
+  "\"message\"":{
+         "\"text\"":"\"$body\""
+  }
+}" > /usr/lib/zabbix/alertscripts/file.json
+
+curl -x  http://nabeel_t:'enzoslR722$'@nlawsprvq01.mtn.co.za:8080 -X POST -H "Content-Type: application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJ1Sng0bE4wWUV1eDlpS2NMdTlGZA0FsMndwWkpCbU9MVmktVDRVVURLNG5zYzl0Q1RBTG1JMy1Xa3ZApNktQRWl0SnNnN2JBOGhCd0l0c2dxU3BMSW05MmcyNmYyXzBlV3pRWDh4c1lJMVVjckxKMHV1NmhBa2QwdkFwY3FjMVlsT3JFbG56RmpOblJYdnVSN0hPajVFVFFUMmMwVl9IVmNvUzFQb3pEaUZA0d1ByNnVKQkxOLUNoV2FkNGVrZAEdXQk1JX2c3QWpHWk12b2hSYwZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
+#curl -x  http://MONEM_AL:enzoslR261989@nlawsprvq01.mtn.co.za:8080 -X POST -H "Content-Type: application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJ1Sng0bE4wWUV1eDlpS2NMdTlGZA0FsMndwWkpCbU9MVmktVDRVVURLNG5zYzl0Q1RBTG1JMy1Xa3ZApNktQRWl0SnNnN2JBOGhCd0l0c2dxU3BMSW05MmcyNmYyXzBlV3pRWDh4c1lJMVVjckxKMHV1NmhBa2QwdkFwY3FjMVlsT3JFbG56RmpOblJYdnVSN0hPajVFVFFUMmMwVl9IVmNvUzFQb3pEaUZA0d1ByNnVKQkxOLUNoV2FkNGVrZAEdXQk1JX2c3QWpHWk12b2hSYwZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
+#curl -x http://nlawsprvq01.mtn.co.za:8080 -X POST -H "Content-Type: application/json" "https://graph.facebook.com/v4.0/me/messages?access_token=DQVJ1Sng0bE4wWUV1eDlpS2NMdTlGZA0FsMndwWkpCbU9MVmktVDRVVURLNG5zYzl0Q1RBTG1JMy1Xa3ZApNktQRWl0SnNnN2JBOGhCd0l0c2dxU3BMSW05MmcyNmYyXzBlV3pRWDh4c1lJMVVjckxKMHV1NmhBa2QwdkFwY3FjMVlsT3JFbG56RmpOblJYdnVSN0hPajVFVFFUMmMwVl9IVmNvUzFQb3pEaUZA0d1ByNnVKQkxOLUNoV2FkNGVrZAEdXQk1JX2c3QWpHWk12b2hSYwZDZD" -d @/usr/lib/zabbix/alertscripts/file.json
